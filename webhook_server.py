@@ -5,7 +5,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def handle_webhook():
-    return 'Webhook received'
+
+    if request.method == 'POST':
+        subprocess.call(['/home/ubuntu/chess_data/CI-CD-for-chess-data-pipeline/update_repo.sh'])
 
 if __name__ == '__main__':
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
