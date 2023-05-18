@@ -2,7 +2,7 @@
 
 This repo uses Flask, watches for POST requests, and uses a self-signed certificate in an AWS EC2 instance to set up CI/CD for the `chess-data-pipline` repo.
 
-A webhook from the `chess-data-pipeline` repo is required, and the above CI/CD setup uses a clone of this repo in a Ubuntu EC2 instance. The webhook is set to accept a self-signed certificate in the EC2 instance and to use HTTPS, which is allowed by the inbound rules for this EC2 instance's security group.
+A webhook from the `chess-data-pipeline` repo is required, and the above CI/CD setup uses clones of this repo and the `chess-data-pipeline` repo that are located in a Ubuntu EC2 instance. The webhook is set to accept a self-signed certificate in the EC2 instance and to use HTTPS, which is allowed by the inbound rules for this EC2 instance's security group.
 
 The virtual environment used by this repo:
 
